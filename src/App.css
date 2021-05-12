@@ -1,5 +1,8 @@
 .App {
   text-align: center;
+  display: grid;
+  grid-template-columns: 15%,70%,15%;
+  grid-template-rows: 8%,84%,8%;
 }
 
 .App-logo {
@@ -13,19 +16,52 @@
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.MainContainer {
+   display: flex;
+  flex-direction: row;
+   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  grid-column: 2/3;
+  grid-row: 2/3;
+  border: 1px solid black;
+
 }
 
+.Marca{
+  grid-column: 1/4;
+  grid-row: 1/2;
+  border: 1px solid black;
+}
+
+
+.filtro{
+  grid-column: 1/2;
+  grid-row: 2/3;
+  border: 1px solid black;
+
+}
+.carrinho{
+  grid-column: 3/4;
+  grid-row: 2/3;
+  border: 1px solid black;
+}
+.rodape{
+  grid-column: 1/4;
+  grid-row: 3/4;
+  border: 1px solid black;
+}
+
+
+img{
+  height: 10vh;  
+ }
+ 
+*{
+  text-align: center;
+}
 .App-link {
   color: #61dafb;
+
 }
 
 @keyframes App-logo-spin {
