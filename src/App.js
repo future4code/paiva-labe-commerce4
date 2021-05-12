@@ -1,9 +1,7 @@
-import React from 'react';
-import './App.css';
-import Produtos from './components/Produtos/Produtos';
-import Fundo from './components/Produtos/img/background.jpg'
-
-
+import React from "react";
+import "./App.css";
+import Produtos from "./components/Produtos/Produtos";
+import Fundo from "./components/Produtos/img/background.jpg";
 
 class App extends React.Component {
   render() {
@@ -16,18 +14,13 @@ class App extends React.Component {
           <Produtos />
         </div>
 
-        <section className="filtro">
-          
-          
-          </section>
+        <section className="filtro"></section>
 
-        <section className="carrinho">
-          
-          </section>
-        
-          <div className="rodape">
-<p>Rodapé bla bla bla</p>
-          </div>
+        <section className="carrinho"></section>
+
+        <div className="rodape">
+          <p>Rodapé bla bla bla</p>
+        </div>
       </div>
     );
   }

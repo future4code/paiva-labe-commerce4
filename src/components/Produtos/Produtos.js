@@ -11,83 +11,73 @@ import modelo8 from './img/modelo8.jpg'
 
 
 class Produtos extends React.Component {
-    state = {
-          produtos: [
-              {
-                id: 1,
-                nome: "Macacão Espacial Space Suit",
-                price: 500,
-                image: {modelo1},
-              },
-              {
-                id: 2,
-                nome: "Macacão Nasa 2000",
-                price: 2300,
-                image: { modelo2 },
-              },
-              {
-                id: 3,
-                nome: "Macacão Basic Lycra",
-                price: 380,
-                image: { modelo3 },
-              },
-              {
-                id: 4,
-                nome: "Macacão Pandora Brown",
-                price: 900,
-                image: { modelo4 },
-              },
-              {
-                id: 5,
-                nome: "Macacão Blue US",
-                price: 1200,
-                image: { modelo5 },
-              },
-              {
-                id: 6,
-                nome: "Macacão Odyssey",
-                price: 780,
-                image: { modelo6 },
-              },
-              {
-                id: 7,
-                nome: "Macacão Sunshine",
-                price: 320,
-                image: { modelo7 },
-              },
-              {
-                id: 8,
-                nome: "Macacão Mercury",
-                price: 750,
-                image: { modelo8 },
-              },
-            ],
-      }
+  state = {
+    produtos: [
+      {
+        id: 1,
+        nome: "Macacão Espacial Space Suit",
+        price: 500,
+        image: { modelo1 },
+      },
+      {
+        id: 2,
+        nome: "Macacão Nasa 2000",
+        price: 2300,
+        image: { modelo2 },
+      },
+      {
+        id: 3,
+        nome: "Macacão Basic Lycra",
+        price: 380,
+        image: { modelo3 },
+      },
+      {
+        id: 4,
+        nome: "Macacão Pandora Brown",
+        price: 900,
+        image: { modelo4 },
+      },
+      {
+        id: 5,
+        nome: "Macacão Blue US",
+        price: 1200,
+        image: { modelo5 },
+      },
+      {
+        id: 6,
+        nome: "Macacão Odyssey",
+        price: 780,
+        image: { modelo6 },
+      },
+      {
+        id: 7,
+        nome: "Macacão Sunshine",
+        price: 320,
+        image: { modelo7 },
+      },
+      {
+        id: 8,
+        nome: "Macacão Mercury",
+        price: 750,
+        image: { modelo8 },
+      },
+    ],
+  };
 
-
-    
-    render(){
-        const listaDeProdutos = this.state.produtos.map((produto)=>{
-        return(
-        
+  render() {
+    const listaDeProdutos = this.state.produtos.map((produto) => {
+      return (
         <Cards
-        id={produto.id}
-        price={produto.price}
-        imagem={produto.image}
-        nome={produto.nome}
+          id={produto.id}
+          price={produto.price}
+          imagem={produto.image}
+          nome={produto.nome}
         />
-            
-        )
+      );
     });
 
-
-        return (
-        <div> 
-        {listaDeProdutos}
-           </div>
-
-        )
-    }
+    return <div>{listaDeProdutos}</div>;
+  }
 }
 
 export default Produtos;
