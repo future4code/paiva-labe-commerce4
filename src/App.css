@@ -39,6 +39,14 @@
 
 }
 
+
+.Ordem {
+    display:flex;
+    align-items: center;
+    justify-content: end;
+    width: 20vh;
+    grid-column: 3/4
+}
 .Marca{
   grid-column: 1/4;
   grid-row: 1/2;
