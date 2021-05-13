@@ -3,43 +3,53 @@ import styled from "styled-components";
 
 const BigcardContainer = styled.div`
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   border: 1px solid black;
   height: auto;
-  padding-bottom: 20px;
   border-radius: 5px;
-  width: 40vh;
+  width: 36vh;
   margin: 2vh;
+  box-shadow: 2px 2px 5px rgb(46 45 45);
 
   div {
     display: flex;
     background-color: black;
     align-items: center;
     justify-content: center;
-    width: 40vh;
+    width: 20vh;
+    flex-direction: row;
   }
   img {
-    height: 300px;
+    height: 35vh;
   }
   p {
     font-size: 10px;
   }
   .bigcard-container h4 {
   }
-`;
+
+ 
+`
+
 
 function Cards(props) {
   return (
     <BigcardContainer>
+
       <div>
         <img src={props.imagem} />
       </div>
 
-      <h4>{props.nome}</h4>
-      <p>cod.{props.id}</p>
-      <h8>R${props.price}</h8>
-      <button>Adicionar ao Carrinho</button>
+      <section>
+        <h4>{props.nome}</h4>
+        <p>cod.{props.id}</p>
+        <p>
+          <h1>R${props.price}</h1>
+        </p>
+        <button>Adicionar ao Carrinho</button>
+      </section>
+
     </BigcardContainer>
   );
 }
