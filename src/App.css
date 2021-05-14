@@ -39,6 +39,12 @@
 
 }
 
+.ContainerTotal{
+display:flex;
+border: 1px dotted black;
+
+}
+
 
 .Ordem {
     display:flex;

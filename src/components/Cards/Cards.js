@@ -28,15 +28,11 @@ const BigcardContainer = styled.div`
   }
   .bigcard-container h4 {
   }
-
- 
-`
-
+`;
 
 function Cards(props) {
   return (
     <BigcardContainer>
-
       <div>
         <img src={props.imagem} />
       </div>
@@ -47,9 +43,10 @@ function Cards(props) {
         <p>
           <h1>R${props.price}</h1>
         </p>
-        <button>Adicionar ao Carrinho</button>
+        <button onClick={() => props.onAddProductToCart(this.props.produto.id)}>
+          Adicionar ao Carrinho
+        </button>
       </section>
-
     </BigcardContainer>
   );
 }

@@ -1,13 +1,12 @@
 import React from "react";
 import "./App.css";
-// import Produtos from "./components/Produtos/Produtos";
+import Produtos from "./components/Produtos/Produtos";
 import Fundo from "./components/Produtos/img/background.jpg";
-import Cards from "./components/Cards/Cards";
 
 
 class App extends React.Component {
   state = {
-    produtos: [
+    listaProdutos: [
       {
         id: 1,
         nome: "Macacão Space Suit",
@@ -64,40 +63,15 @@ class App extends React.Component {
       },
     ],
     order: "decrescente",
-  };
 
-  listaOrdenada = () => {
-    return this.state.produtos.sort((a, b) => {
-      if (this.state.order === "crescente") {
-        return a.price - b.price;
-      } else {
-        return b.price - a.price;
-      }
-    });
-  };
-
-  onChangeOrder = (event) => {
-    return this.setState({ order: event.target.value });
+    produtosCarrinho: [],
+    noCarrinho: false,
   };
 
   render() {
-    const todosProdutos = [...this.state.produtos];
-    console.log(todosProdutos);
-
-    const listaOrdenada = this.listaOrdenada();
-
-    console.log(listaOrdenada);
-
-    const listaDeProdutos = listaOrdenada.map((produto) => {
-      return (
-        <Cards
-          id={produto.id}
-          price={produto.price}
-          nome={produto.nome}
-          imagem={produto.image}
-        />
-      );
-    });
+    console.log(`teste listaProdutos`, this.state.listaProdutos);
+    
+    console.log(`carrinho`, this.state.produtosCarrinho);
 
     return (
       <div className="App">
@@ -105,26 +79,21 @@ class App extends React.Component {
           <img src={Fundo} />
         </header>
         <div className="MainContainer">
-          <div className="Ordem">
-            <p>Quantidade de produtos: {listaOrdenada.length}</p>
-
-            <p>Ordenação:</p>
-            <select value={this.state.order} onChange={this.onChangeOrder}>
-              <option value={"crescente"}>Crescente</option>
-              <option value={"decrescente"}>Decrescente</option>
-            </select>
-          </div>
-
-          <div className="vitrine">{listaDeProdutos}</div>
+          <Produtos
+            listaProdutos={this.state.listaProdutos}
+            onClickInfo={this.adicionarProdutoAoCarrinho}
+          />
         </div>
 
         <section className="filtro"></section>
 
-        <section className="carrinho"></section>
+        <section className="carrinho">
+          <h2> Carrinho:</h2>
 
-        <div className="rodape">
-          <p>Rodapé bla bla bla</p>
-        </div>
+          <div className="containerTotal">
+            <p>Total:</p>
+          </div>
+        </section>
       </div>
     );
   }
