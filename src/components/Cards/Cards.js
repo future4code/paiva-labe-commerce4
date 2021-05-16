@@ -5,12 +5,22 @@ const BigcardContainer = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
-  border: 1px solid black;
-  height: auto;
+  border: 4px solid silver
+  height: 37vh;
   border-radius: 5px;
-  width: 36vh;
+  width: 46vh;
+  border: 3px solid silver;
+  
   margin: 2vh;
-  box-shadow: 2px 2px 5px rgb(46 45 45);
+  background-color: silver;
+  margin-bottom: 20px;
+ margin-right:12px;
+
+
+:hover{
+  box-shadow: 5px 5px 25px silver;
+  background-color: white;
+}
 
   div {
     display: flex;
@@ -21,7 +31,7 @@ const BigcardContainer = styled.div`
     flex-direction: row;
   }
   img {
-    height: 35vh;
+    height: 45vh;
   }
   p {
     font-size: 10px;
@@ -33,17 +43,12 @@ const BigcardContainer = styled.div`
 function Cards(props) {
   return (
     <BigcardContainer>
-      <div>
-        <img src={props.imagem} />
-      </div>
+      <img src={props.imagem} />
 
       <section>
-        <h4>{props.nome}</h4>
-        <p>cod.{props.id}</p>
-        <p>
-          <h1>R${props.price}</h1>
-        </p>
-        <button onClick={() => props.onAddProductToCart(this.props.produto.id)}>
+        <h4>{props.name}</h4>
+        <h6>R${props.price}</h6>
+        <button className="botao" onClick={()=>props.onClickInfo}>
           Adicionar ao Carrinho
         </button>
       </section>

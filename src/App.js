@@ -1,65 +1,76 @@
 import React from "react";
 import "./App.css";
 import Produtos from "./components/Produtos/Produtos";
-import Fundo from "./components/Produtos/img/background.jpg";
-
+import Logo from "./components/Produtos/img/roupasEspaciais.png";
+import Filtros from "./components/Filtros/Filtros";
+import Carrinho from "./components/Carrinho/Carrinho";
+import total from "./components/Produtos/img/opcao.png"
 
 class App extends React.Component {
   state = {
     listaProdutos: [
       {
         id: 1,
-        nome: "Macacão Space Suit",
+        name: "Macacão Space Suit",
         price: 500,
-        image: require("./components/Produtos/img/modelo1.jpg"),
+        image: require("./components/Produtos/img/modelo1(1).png"),
+        qtd: 0,
       },
       {
         id: 2,
-        nome: "Macacão Nasa 2000",
+        name: "Macacão Nasa 2000",
         price: 2300,
-        image: require("./components/Produtos/img/modelo2.jpg"),
+        image: require("./components/Produtos/img/modelo2(4).png"),
+        qtd: 0,
       },
       {
         id: 3,
-        nome: "Macacão Basic Lycra",
+        name: "Macacão Basic Lycra",
         price: 380,
-        image: require("./components/Produtos/img/modelo3.jpg"),
+        image: require("./components/Produtos/img/modelo3(2).png"),
+        qtd: 0,
       },
       {
         id: 4,
-        nome: "Macacão Pandora",
+        name: "Macacão Pandora",
         price: 900,
-        image: require("./components/Produtos/img/modelo4.jpg"),
+        image: require("./components/Produtos/img/modelo4(2).png"),
+        qtd: 0,
       },
       {
         id: 5,
-        nome: "Macacão Blue US",
-        price: 1200,
-        image: require("./components/Produtos/img/modelo5.jpg"),
+        name: "Macacão Blue US",
+        price: 12000,
+        image: require("./components/Produtos/img/modelo5(7).png"),
+        qtd: 0,
       },
       {
         id: 6,
-        nome: "Macacão Odyssey",
-        price: 780,
-        image: require("./components/Produtos/img/modelo6.jpg"),
+        name: "Macacão Odyssey",
+        price: 7800,
+        image: require("./components/Produtos/img/modelo6(3).png"),
+        qtd: 0,
       },
       {
         id: 7,
-        nome: "Macacão Sunshine",
-        price: 320,
-        image: require("./components/Produtos/img/modelo7.jpg"),
+        name: "Macacão Sunshine",
+        price: 3200,
+        image: require("./components/Produtos/img/modelo7(4).png"),
+        qtd: 0,
       },
       {
         id: 8,
-        nome: "Macacão Mercury",
-        price: 750,
-        image: require("./components/Produtos/img/modelo8.jpg"),
+        name: "Macacão Mercury",
+        price: 7500,
+        image: require("./components/Produtos/img/modelo8(1).png"),
+        qtd: 0,
       },
       {
         id: 9,
-        nome: "Macacão Minimalist",
-        price: 1500,
-        image: require("./components/Produtos/img/modelo9.jpg"),
+        name: "Macacão Minimalist",
+        price: 15000,
+        image: require("./components/Produtos/img/modelo9(14).png"),
+        qtd: 0,
       },
     ],
     order: "decrescente",
@@ -68,31 +79,46 @@ class App extends React.Component {
     noCarrinho: false,
   };
 
+  componentDidMount() {
+    console.log("entrou");
+  }
+
+  componentDidUpdate() {
+    console.log("clickou");
+  }
+
   render() {
     console.log(`teste listaProdutos`, this.state.listaProdutos);
-    
+    console.log("passou aqui");
     console.log(`carrinho`, this.state.produtosCarrinho);
 
     return (
       <div className="App">
         <header className="Marca">
-          <img src={Fundo} />
+         <h1>Uniformes Espaciais - Labe Commerce</h1>
+          <img src={Logo} />
         </header>
         <div className="MainContainer">
           <Produtos
             listaProdutos={this.state.listaProdutos}
-            onClickInfo={this.adicionarProdutoAoCarrinho}
+            produtosCarrinho={this.state.produtosCarrinho}
           />
         </div>
 
-        <section className="filtro"></section>
-
+        <section className="filtro">
+          <h2>Filtros:</h2>
+          <Filtros />
+        </section>
         <section className="carrinho">
+         <img src={total} className="thanks"/>
           <h2> Carrinho:</h2>
+          <Carrinho />
 
           <div className="containerTotal">
             <p>Total:</p>
+            
           </div>
+          <div className="rodape"></div>
         </section>
       </div>
     );

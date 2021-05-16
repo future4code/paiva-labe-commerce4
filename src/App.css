@@ -2,15 +2,25 @@
   text-align: center;
   display: grid;
   grid-template-columns: 15%,70%,15%;
-  grid-template-rows: 8%,84%,8%;
+  grid-template-rows: 8%,74%,8%;
+  background-image: linear-gradient(to top, rgb(116, 117, 216), rgb(1, 4, 95));
+  color: white;
 }
-
 
 
 .App-logo {
   height: 40vmin;
   pointer-events: none;
-  
+}
+.botao{
+  width: 90px;
+ }
+
+.thanks{
+  padding: -6px;
+  width: 70px;
+  height: auto;
+  border-bottom: 4px solid lightblue;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -22,9 +32,6 @@
 .MainContainer {
      grid-column: 2/3;
   grid-row: 2/3;
-  border: 1px solid black;
-  
-
 }
 .vitrine{
   margin: 5px;
@@ -34,6 +41,7 @@
   font-size: 20px;
   color: black;
   display:grid;
+  grid-row:2/3 ;
   grid-template-rows: 2vh, 1fr,1fr,1fr;
   grid-template-columns: repeat(3,1fr);
 
@@ -41,45 +49,54 @@
 
 .ContainerTotal{
 display:flex;
-border: 1px dotted black;
+
 
 }
+.principal{
+display:grid;
+grid-template-rows: 30fr,1fr;
 
+}
+.ordenacao{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  height: 7vh;
+  align-items: center;
+}
 
 .Ordem {
     display:flex;
     align-items: center;
-    justify-content: end;
-    width: 20vh;
-    grid-column: 3/4
+    justify-content: space-evenly;
+    grid-row: 1/2;
 }
 .Marca{
   grid-column: 1/4;
   grid-row: 1/2;
-  border: 1px solid black;
+  background-image: linear-gradient(to bottom,  rgb(105, 173, 99)),rgb(0, 45, 71));
+  color: white;
 }
 
 
 .filtro{
   grid-column: 1/2;
-  grid-row: 2/3;
-  border: 1px solid black;
-
+  grid-row: 2/4;
 }
 .carrinho{
   grid-column: 3/4;
   grid-row: 2/3;
-  border: 1px solid black;
+  padding: 4px;
+
 }
 .rodape{
   grid-column: 1/4;
   grid-row: 3/4;
-  border: 1px solid black;
 }
 
 
 img{
-  height: 8vh;  
+  height: 20vh;  
  }
  
 *{
@@ -87,7 +104,6 @@ img{
 }
 .App-link {
   color: #61dafb;
-
 }
 
 @keyframes App-logo-spin {
