@@ -18,13 +18,13 @@ Carrinho
 
 **Link Surge**
 
-Até sexta feira estava assim:
+Até sexta feira 17h estava assim:
 
 http://deeply-nail.surge.sh/
 
-Pós Sexta-Feira
+Pós Sexta-Feira 17h:
 
-http://
+http://slim-effect.surge.sh/
 
 **Imagem**
 ![image](https://user-images.githubusercontent.com/79425709/118422503-bb168980-b699-11eb-92ed-e127ed725ae0.png)
