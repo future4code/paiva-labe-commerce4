@@ -8,13 +8,19 @@ em React JS
 
 **O que funciona**
 
-Ordenação
+*Ordenação
+*quantidade de produtos
+
+
 
 **O que não funciona**
 
-Botao adicionar
-Filtros
-Carrinho
+*Botao adicionar
+*Filtros
+*Carrinho
+
+
+
 
 **Link Surge**
 
